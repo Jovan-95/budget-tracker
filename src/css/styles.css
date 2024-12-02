@@ -1,0 +1,159 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* Summary Section */
+#summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    flex: 1;
+}
+
+.card h2 {
+    margin: 0 0 0.5rem;
+}
+
+/* Transaction Form */
+#transaction-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#transaction-form label {
+    font-weight: bold;
+}
+
+#transaction-form input, #transaction-form select, #transaction-form button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#transaction-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#transaction-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Transaction History */
+#transaction-history table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#transaction-history th, #transaction-history td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+#transaction-history th {
+    background: #007bff;
+    color: #fff;
+}
+
+#transaction-history tr:last-child td {
+    border-bottom: none;
+}
+
+/* Visualizations */
+#charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#charts canvas {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    /*position: fixed;*/
+    bottom: 0;
+    width: 100%;
+}
+
+
+.notification {
+    top: 16px;
+    right: 16px;
+    position: fixed;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px;
+    color: white;
+    border-radius: 8px;
+}
+
+.bg-green {
+    background: green;
+}
+
+.bg-red {
+    background: red;
+}
+
+.hidden {
+    display: none;
+}

@@ -10,6 +10,60 @@ let totalIncomeValue = 0;
 let totalExpensesValue = 0;
 let totalBalance = 0;
 
+
+///// REGISTER
+const reg = document.querySelector('.register')
+const regForm = document.querySelector('#registrationForm')
+async function registration(e) {
+    e.preventDefault();
+
+    // Get form values
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Basic validation
+    if (username === '' || email === '' || password === '') {
+        alert('All fields are required.');
+        return;
+    }
+
+    if (password.length < 6) {
+        alert('Password must be at least 6 characters long.');
+        return;
+    }
+
+    // Data to be sent in the POST request
+    const newData = {
+        username: username,
+        email: email,
+        password: password,
+    };
+
+    try {
+        let res = await fetch('https://jsonplaceholder.typicode.com/todos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newData),
+        });
+        if (!res.ok) {
+            throw new Error(`${res.status}, ${res.statusText}`)
+        }
+        // console.log(res)
+        const data = await res.json();
+        console.log(data);
+        let wrapper = document.querySelector('.wrapper');
+        wrapper.classList.remove('hidden')
+        reg.classList.add('hidden')
+    } catch (err) {
+        console.log(err)
+    }
+}
+regForm.addEventListener('submit', registration)
+
+//////////// !!!!!!!!! Project
 // Date
 let d = new Date();
 let date = d.toISOString().split('T')[0];
